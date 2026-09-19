@@ -16,20 +16,21 @@ def get_data():
     except:
         answer.insert(INSERT, "ERROR! Invalid input or poor internet connection")
 
+
 win = Tk()
-win.title("Search Engine Program")
+win.title("MASA OmniSearch Engine")
 topframe = Frame(win)
 entry = Entry(topframe)
 entry.pack()
 button = Button(topframe, text="search", command=get_data)
 button.pack()
-topframe.pack(side = TOP)
+topframe.pack(side=TOP)
 
 
 bottomframe = Frame(win)
 scroll = Scrollbar(bottomframe)
 scroll.pack(side=RIGHT, fill=Y)
-answer =  Text(bottomframe, width=50, height=20, yscrollcommand = scroll.set, wrap=WORD)
+answer = Text(bottomframe, width=50, height=20, yscrollcommand=scroll.set, wrap=WORD)
 scroll.config(command=answer.yview)
 answer.pack()
 bottomframe.pack()
